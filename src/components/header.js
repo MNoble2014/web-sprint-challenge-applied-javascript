@@ -32,6 +32,7 @@ const Header = (title, date, temp) => {
   return header;
 }
 
+const today = new Date()
 const headerAppender = (selector) => {
   // TASK 2
   // ---------------------
@@ -39,8 +40,10 @@ const headerAppender = (selector) => {
   // It should create a header using the Header component above, passing arguments of your choosing.
   // It should append the header to the element in the DOM that matches the given selector.
   //
-  const newHeader = Header('Lambda Times', 'Friday December 03', 'by Micheal Noble');
-  document.querySelector(selector).appendChild(newHeader);
+  document.querySelector(selector)
+    .append(Header(`$${today.getMonth()}
+    ${today.getDay()}
+    ${today.getFullYear()}`))
 }
-
+  
 export { Header, headerAppender }
