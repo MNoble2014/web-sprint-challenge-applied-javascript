@@ -11,24 +11,24 @@
   //  </div>
   //
 const Header = (title, date, temp) => {
-  const header = document.querySelector('div');
-  document.createElement('div');
+  const header = document.createElement('div');
+  const dateSpan = document.createElement('span');
+  const titleHeader = document.createElement('h1');
+  const tempSpan = document.createElement('span');
+  console.log(dateSpan)
+  dateSpan.textContent = date;
+  titleHeader.textContent = title;
+  tempSpan.textContent = temp;
+
   header.classList.add('header');
+  dateSpan.classList.add('date');
+  tempSpan.classList.add('temp');
 
-  const headerDate = document.querySelector('span');
-  headerDate.classList.add('date');
-  headerDate.textContent = date;
-  header.appendChild(headerDate);
+  header.append(dateSpan);
+  header.append(titleHeader);
+  header.append(tempSpan);
 
-  const headerTitle = document.querySelector('h1');
-  headerTitle.textContent = title;
-  header.appendChild(headerTitle);
-
-  const headerTemp = docment.querySelector('span');
-  headerTemp.classList.add('temp');
-  headerTemp.textContent = temp;
-  header.appendChild(headerTemp);
-
+  console.log(header);
   return header;
 }
 
